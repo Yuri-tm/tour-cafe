@@ -100,7 +100,7 @@ const Index = () => {
 
         {/* Personalities */}
         <section className="mb-8">
-          <h2 className="text-lg font-bold text-foreground mb-4">Персоны</h2>
+          <h2 className="text-lg font-bold text-foreground mb-4">Наш повар и его комманда</h2>
           <div className="grid grid-cols-2 gap-3">
             {personalities.map((person) => <Card key={person.id} className="overflow-hidden">
                 <CardContent className="p-0">
