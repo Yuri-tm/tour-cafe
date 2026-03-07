@@ -3,30 +3,30 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 
 const categories = [
-  { id: 1, name: "Категория 1" },
-  { id: 2, name: "Категория 2" },
-];
+{ id: 1, name: "Категория 1" },
+{ id: 2, name: "Категория 2" }];
+
 
 const products = Array.from({ length: 14 }, (_, i) => ({
   id: i + 1,
   name: `Продукт ${i + 1}`,
-  price: `${(i + 1) * 100} ₽`,
+  price: `${(i + 1) * 100} ₽`
 }));
 
 const personalities = [
-  { id: 1, name: "Персона 1", details: "Подробности" },
-  { id: 2, name: "Персона 2", details: "Подробности" },
-  { id: 3, name: "Персона 3", details: "Подробности" },
-  { id: 4, name: "Персона 4", details: "Подробности" },
-  { id: 5, name: "Персона 5", details: "Подробности" },
-  { id: 6, name: "Персона 6", details: "Подробности" },
-];
+{ id: 1, name: "Персона 1", details: "Подробности" },
+{ id: 2, name: "Персона 2", details: "Подробности" },
+{ id: 3, name: "Персона 3", details: "Подробности" },
+{ id: 4, name: "Персона 4", details: "Подробности" },
+{ id: 5, name: "Персона 5", details: "Подробности" },
+{ id: 6, name: "Персона 6", details: "Подробности" }];
+
 
 const offers = [
-  { id: 1, title: "Деталь предложения 1" },
-  { id: 2, title: "Деталь предложения 2" },
-  { id: 3, title: "Деталь предложения 3" },
-];
+{ id: 1, title: "Деталь предложения 1" },
+{ id: 2, title: "Деталь предложения 2" },
+{ id: 3, title: "Деталь предложения 3" }];
+
 
 const Index = () => {
   return (
@@ -35,7 +35,14 @@ const Index = () => {
         {/* Header */}
         <header className="flex items-center justify-between mb-4">
           <div className="h-10 w-10 rounded-full bg-primary" />
-          <h1 className="text-xl font-bold text-foreground">Тур-кафе</h1>
+          <h1 className="font-bold text-foreground text-center py-[10px] px-[10px] text-2xl">Тур-кафе
+
+
+СӘЯХӘТ
+
+(путешествие)
+
+          </h1>
           <a href="tel:+70000000000" className="text-muted-foreground">
             <Phone className="h-5 w-5" />
           </a>
@@ -54,22 +61,19 @@ const Index = () => {
 
         {/* Categories */}
         <div className="grid grid-cols-2 gap-3 mb-6">
-          {categories.map((cat) => (
-            <Card key={cat.id} className="overflow-hidden">
+          {categories.map((cat) => <Card key={cat.id} className="overflow-hidden">
               <CardContent className="p-0">
                 <div className="h-24 bg-muted" />
                 <p className="p-3 text-sm font-medium text-card-foreground">
                   {cat.name}
                 </p>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Products */}
         <div className="grid grid-cols-2 gap-3 mb-8">
-          {products.map((product) => (
-            <Card key={product.id} className="overflow-hidden">
+          {products.map((product) => <Card key={product.id} className="overflow-hidden">
               <CardContent className="p-0">
                 <div className="h-28 bg-muted" />
                 <div className="p-3">
@@ -81,16 +85,14 @@ const Index = () => {
                   </p>
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Personalities */}
         <section className="mb-8">
           <h2 className="text-lg font-bold text-foreground mb-4">Персоны</h2>
           <div className="grid grid-cols-2 gap-3">
-            {personalities.map((person) => (
-              <Card key={person.id} className="overflow-hidden">
+            {personalities.map((person) => <Card key={person.id} className="overflow-hidden">
                 <CardContent className="p-0">
                   <div className="h-28 bg-muted rounded-t-lg" />
                   <div className="p-3">
@@ -102,8 +104,7 @@ const Index = () => {
                     </p>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </section>
 
@@ -126,8 +127,7 @@ const Index = () => {
             </Card>
 
             {/* Offer Details */}
-            {offers.map((offer) => (
-              <Card key={offer.id} className="overflow-hidden">
+            {offers.map((offer) => <Card key={offer.id} className="overflow-hidden">
                 <CardContent className="p-0">
                   <div className="h-20 bg-muted" />
                   <p className="p-2 text-sm font-medium text-card-foreground">
@@ -135,12 +135,12 @@ const Index = () => {
                   </p>
                 </CardContent>
               </Card>
-            ))}
+            )}
           </div>
         </section>
       </div>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Index;
