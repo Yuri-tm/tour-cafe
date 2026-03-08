@@ -81,6 +81,14 @@ const Index = () => {
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {product.description}
               </p>
+              {"details" in product && product.details && (
+                <>
+                  <hr className="my-2 border-border" />
+                  <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
+                    {product.details}
+                  </p>
+                </>
+              )}
             </div>
           </div>
         </CardContent>
