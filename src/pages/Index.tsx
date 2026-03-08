@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import culSharifImg from "@/assets/CulSharif.png";
@@ -44,6 +45,21 @@ const offers = [
 
 const Index = () => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [selectedProducts, setSelectedProducts] = useState<Set<number>>(new Set());
+
+  const handleCheckboxChange = (productId: number, checked: boolean) => {
+    setSelectedProducts((prev) => {
+      const next = new Set(prev);
+      if (checked) next.add(productId);
+      else next.delete(productId);
+      return next;
+    });
+  };
+
+  const handleSubmit = () => {
+    const selected = products.filter((p) => selectedProducts.has(p.id));
+    console.log("Выбранные продукты:", selected);
+  };
 
   const leftProducts = products.filter((_, i) => i % 2 === 0);
   const rightProducts = products.filter((_, i) => i % 2 === 1);
@@ -61,7 +77,21 @@ const Index = () => {
         onClick={() => handleCardClick(product.id)}
       >
         <CardContent className="p-0">
-          <div className="h-28 bg-muted" />
+          <div className="relative h-28 bg-muted">
+            <label
+              className="absolute top-2 right-2 flex items-center gap-1.5 z-10 cursor-pointer"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Checkbox
+                checked={selectedProducts.has(product.id)}
+                onCheckedChange={(checked) => handleCheckboxChange(product.id, !!checked)}
+                className="h-5 w-5 rounded-full border-2 border-primary bg-background/80 backdrop-blur-sm data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+              />
+              <span className="text-[10px] font-medium text-foreground bg-background/80 backdrop-blur-sm rounded px-1 py-0.5">
+                Выбрать
+              </span>
+            </label>
+          </div>
           <div className="p-3">
             <p className="text-sm font-medium text-card-foreground">
               {product.name}
@@ -123,7 +153,12 @@ const Index = () => {
           <Button asChild className="flex-1 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white">
             <a href="tel:+7000000000"><Phone className="h-4 w-4" />​ПОЗВОНИТЬ</a>
           </Button>
-          <Button variant="secondary" className="flex-1 rounded-xl text-emerald-600">
+          <Button
+            variant="secondary"
+            className="flex-1 rounded-xl text-emerald-600"
+            onClick={handleSubmit}
+            disabled={selectedProducts.size === 0}
+          >
             <Phone className="h-4 w-4" />
             ЗАКАЗАТЬ
           </Button>
