@@ -134,20 +134,14 @@ const Index = () => {
         </div>
 
         {/* Products */}
-        <div className="grid grid-cols-2 gap-3 mb-8">
-          {products.map((product) => <Card key={product.id} className="overflow-hidden">
-              <CardContent className="p-0">
-                <div className="h-28 bg-muted" />
-                <div className="p-3">
-                  <p className="text-sm font-medium text-card-foreground">
-                    {product.name}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {product.price}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>)}
+        <div className="flex gap-3 mb-8">
+          <div className="flex-1 flex flex-col gap-3">
+            {leftProducts.map(renderProductCard)}
+          </div>
+          <div className="flex-1 flex flex-col gap-3">
+            {rightProducts.map(renderProductCard)}
+          </div>
+        </div>
         </div>
 
         {/* Personalities */}
