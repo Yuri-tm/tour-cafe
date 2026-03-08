@@ -132,7 +132,9 @@ const Index = () => {
             {/* Main Offer - spans 3 rows */}
             <Card className="row-span-3 overflow-hidden">
               <CardContent className="p-0 h-full">
-                <div className="h-full min-h-[280px] bg-muted" />
+                <div className="h-full min-h-[280px] bg-muted flex items-center justify-center">
+                  <p className="text-sm font-medium text-muted-foreground text-center px-3">Текст предложения</p>
+                </div>
                 <div className="p-3">
                   <p className="text-sm font-semibold text-card-foreground">
                     Главное предложение
