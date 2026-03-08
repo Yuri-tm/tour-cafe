@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
@@ -10,20 +11,20 @@ const categories = [
 { id: 2, name: "ТАТАРСТАН", image: bolgarImg }];
 
 const products = [
-{ id: 1, name: "Белый камень с крестом и полумесяцем", price: "100 ₽" },
-{ id: 2, name: "Свияжск", price: "200 ₽" },
-{ id: 3, name: "Ханское золото", price: "300 ₽" },
-{ id: 4, name: "Раифский монастырь", price: "400 ₽" },
-{ id: 5, name: "Продукт 5", price: "500 ₽" },
-{ id: 6, name: "Болгар", price: "600 ₽" },
-{ id: 7, name: "Продукт 7", price: "700 ₽" },
-{ id: 8, name: "Продукт 8", price: "800 ₽" },
-{ id: 9, name: "Продукт 9", price: "900 ₽" },
-{ id: 10, name: "Продукт 10", price: "1000 ₽" },
-{ id: 11, name: "Продукт 11", price: "1100 ₽" },
-{ id: 12, name: "Продукт 12", price: "1200 ₽" },
-{ id: 13, name: "Продукт 13", price: "1300 ₽" },
-{ id: 14, name: "Продукт 14", price: "1400 ₽" }];
+{ id: 1, name: "Белый камень с крестом и полумесяцем", price: "100 ₽", description: "Уникальный символ единства двух религий — креста и полумесяца, высеченный на древнем белом камне. Этот артефакт олицетворяет многовековую историю мирного сосуществования народов Татарстана и их духовных традиций." },
+{ id: 2, name: "Свияжск", price: "200 ₽", description: "Остров-град Свияжск — жемчужина Татарстана, основанная Иваном Грозным в 1551 году. Уникальный историко-архитектурный комплекс, включённый в список Всемирного наследия ЮНЕСКО, с древними монастырями и храмами на живописном острове." },
+{ id: 3, name: "Ханское золото", price: "300 ₽", description: "Блюдо, вдохновлённое роскошью Казанского ханства. Изысканное сочетание традиционных татарских специй и благородных ингредиентов создаёт неповторимый вкус, достойный ханского стола. Настоящее кулинарное путешествие во времени." },
+{ id: 4, name: "Раифский монастырь", price: "400 ₽", description: "Раифский Богородицкий монастырь — одна из самых почитаемых обителей Татарстана, основанная в XVII веке на берегу живописного озера. Блюдо передаёт атмосферу умиротворения и духовной чистоты этого святого места." },
+{ id: 5, name: "Продукт 5", price: "500 ₽", description: "Авторское блюдо от шеф-повара, созданное по старинным рецептам татарской кухни с использованием местных сезонных продуктов. Каждый ингредиент тщательно подобран для создания гармоничного и запоминающегося вкусового впечатления." },
+{ id: 6, name: "Болгар", price: "600 ₽", description: "Блюдо, посвящённое древнему городу Болгар — столице Волжской Булгарии. Это кулинарное произведение отражает богатое наследие булгарской цивилизации, объединяя восточные пряности и традиционные рецепты Поволжья." },
+{ id: 7, name: "Продукт 7", price: "700 ₽", description: "Изысканное блюдо, вдохновлённое красотой природы Татарстана. Свежие локальные продукты, приготовленные с мастерством и любовью, раскрывают глубину и разнообразие татарской кулинарной традиции в каждом кусочке." },
+{ id: 8, name: "Продукт 8", price: "800 ₽", description: "Премиальное блюдо из коллекции шеф-повара. Уникальное сочетание текстур и вкусов, созданное на стыке традиционной татарской кухни и современных кулинарных техник. Подаётся с авторским соусом из местных трав." },
+{ id: 9, name: "Продукт 9", price: "900 ₽", description: "Сезонное блюдо, меняющееся в зависимости от времени года. Шеф-повар использует только лучшие продукты текущего сезона, чтобы создать неповторимое гастрономическое впечатление, отражающее ритм природы Поволжья." },
+{ id: 10, name: "Продукт 10", price: "1000 ₽", description: "Фирменное блюдо тур-кафе «Сәяхәт», ставшее визитной карточкой заведения. Сложная рецептура, передаваемая из поколения в поколение, делает это блюдо настоящим кулинарным шедевром татарской гастрономии." },
+{ id: 11, name: "Продукт 11", price: "1100 ₽", description: "Деликатесное блюдо для истинных ценителей высокой кухни. Редкие ингредиенты и авторская подача превращают каждую порцию в произведение искусства, которое радует не только вкус, но и взгляд гостя." },
+{ id: 12, name: "Продукт 12", price: "1200 ₽", description: "Праздничное блюдо, идеально подходящее для особых случаев и торжеств. Щедрая порция, богатый вкус и эффектная подача создают атмосферу настоящего татарского застолья с его гостеприимством и щедростью." },
+{ id: 13, name: "Продукт 13", price: "1300 ₽", description: "Эксклюзивное блюдо ограниченной серии, доступное только по предварительному заказу. Шеф-повар лично контролирует каждый этап приготовления, гарантируя безупречное качество и незабываемые впечатления." },
+{ id: 14, name: "Продукт 14", price: "1400 ₽", description: "Гранд-блюдо коллекции — вершина кулинарного мастерства нашего шеф-повара. Сочетание премиальных ингредиентов, сложных техник приготовления и авторской философии создаёт поистине уникальный гастрономический опыт." }];
 
 
 const personalities = [
@@ -42,6 +43,51 @@ const offers = [
 
 
 const Index = () => {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const leftProducts = products.filter((_, i) => i % 2 === 0);
+  const rightProducts = products.filter((_, i) => i % 2 === 1);
+
+  const handleCardClick = (id: number) => {
+    setExpandedId((prev) => (prev === id ? null : id));
+  };
+
+  const renderProductCard = (product: typeof products[0]) => {
+    const isExpanded = expandedId === product.id;
+    return (
+      <Card
+        key={product.id}
+        className="overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-md"
+        onClick={() => handleCardClick(product.id)}
+      >
+        <CardContent className="p-0">
+          <div className="h-28 bg-muted" />
+          <div className="p-3">
+            <p className="text-sm font-medium text-card-foreground">
+              {product.name}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {product.price}
+            </p>
+          </div>
+          <div
+            className="overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out"
+            style={{
+              maxHeight: isExpanded ? "200px" : "0px",
+              opacity: isExpanded ? 1 : 0,
+            }}
+          >
+            <div className="px-3 pb-3">
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {product.description}
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-md px-4 py-6">
@@ -88,20 +134,13 @@ const Index = () => {
         </div>
 
         {/* Products */}
-        <div className="grid grid-cols-2 gap-3 mb-8">
-          {products.map((product) => <Card key={product.id} className="overflow-hidden">
-              <CardContent className="p-0">
-                <div className="h-28 bg-muted" />
-                <div className="p-3">
-                  <p className="text-sm font-medium text-card-foreground">
-                    {product.name}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {product.price}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>)}
+        <div className="flex gap-3 mb-8">
+          <div className="flex-1 flex flex-col gap-3">
+            {leftProducts.map(renderProductCard)}
+          </div>
+          <div className="flex-1 flex flex-col gap-3">
+            {rightProducts.map(renderProductCard)}
+          </div>
         </div>
 
         {/* Personalities */}
