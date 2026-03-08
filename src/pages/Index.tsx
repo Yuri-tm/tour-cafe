@@ -24,8 +24,8 @@ const products = [
 
 
 const personalities = [
-{ id: 1, name: "Персона 1", details: "Подробности" },
-{ id: 2, name: "Персона 2", details: "Подробности" },
+{ id: 1, name: "Руслан Валиев", details: "шеф-повар" },
+{ id: 2, name: "Ольга Валиева", details: "су-шеф" },
 { id: 3, name: "Персона 3", details: "Подробности" },
 { id: 4, name: "Персона 4", details: "Подробности" },
 { id: 5, name: "Персона 5", details: "Подробности" },
