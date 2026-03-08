@@ -133,8 +133,7 @@ const Index = () => {
             {/* Main Offer - spans 3 rows */}
             <Card className="row-span-3 overflow-hidden">
               <CardContent className="p-0 h-full">
-                <div className="h-full min-h-[280px] bg-muted flex items-center justify-center">
-                  <h3 className="text-lg font-bold text-muted-foreground text-center px-3">КОМПЛИМЕНТ от шеф-повара</h3>
+                <div className="h-full min-h-[280px] bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: `url(${complimentImg})` }}>
                 </div>
                 <div className="p-3">
                   <p className="text-sm font-semibold text-card-foreground">
