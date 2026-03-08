@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import culSharifImg from "@/assets/CulSharif.png";
 
 const categories = [
 { id: 1, name: "КАЗАНЬ" },
@@ -76,7 +77,7 @@ const Index = () => {
         <div className="grid grid-cols-2 gap-3 mb-6">
           {categories.map((cat) => <Card key={cat.id} className="overflow-hidden">
               <CardContent className="p-0">
-                <div className="h-24 bg-muted" />
+                <div className="h-24 bg-cover bg-center" style={{ backgroundImage: `url(${culSharifImg})` }} />
                 <p className="p-3 text-sm font-medium text-card-foreground">
                   {cat.name}
                 </p>
