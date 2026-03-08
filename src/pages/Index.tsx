@@ -37,7 +37,7 @@ const personalities = [
 const offers = [
 { id: 1, title: "Алабрыс" },
 { id: 2, title: "Килән" },
-{ id: 3, title: "Деталь предложения 3" }];
+{ id: 3, title: "Кучтәнәч" }];
 
 
 const Index = () => {
