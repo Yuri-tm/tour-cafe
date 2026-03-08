@@ -67,7 +67,7 @@ const Index = () => {
             <a href="tel:+7000000000">​ПОЗВОНИТЬ</a>
           </Button>
           <Button variant="secondary" className="flex-1 rounded-xl">
-            Button 2
+            ЗАКАЗАТЬ
           </Button>
         </div>
 
