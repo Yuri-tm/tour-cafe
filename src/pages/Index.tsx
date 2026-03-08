@@ -63,7 +63,9 @@ const Index = () => {
 
         {/* Action Buttons */}
         <div className="flex gap-3 mb-6">
-          <Button className="flex-1 rounded-xl">Button 1</Button>
+          <Button asChild className="flex-1 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white">
+            <a href="tel:+7000000000">Позвонить</a>
+          </Button>
           <Button variant="secondary" className="flex-1 rounded-xl">
             Button 2
           </Button>
