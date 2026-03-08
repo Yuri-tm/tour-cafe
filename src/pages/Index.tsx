@@ -66,7 +66,7 @@ const Index = () => {
           <Button asChild className="flex-1 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white">
             <a href="tel:+7000000000">​ПОЗВОНИТЬ</a>
           </Button>
-          <Button variant="secondary" className="flex-1 rounded-xl">
+          <Button variant="secondary" className="flex-1 rounded-xl text-emerald-600">
             ЗАКАЗАТЬ
           </Button>
         </div>
