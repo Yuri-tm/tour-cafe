@@ -10,7 +10,7 @@ const categories = [
 { id: 2, name: "ТАТАРСТАН", image: bolgarImg }];
 
 const products = [
-{ id: 1, name: "Сююмбике", price: "100 ₽" },
+{ id: 1, name: "Белый камень с крестом и полумесяцем", price: "100 ₽" },
 { id: 2, name: "Свияжск", price: "200 ₽" },
 { id: 3, name: "Ханское золото", price: "300 ₽" },
 { id: 4, name: "Раифский монастырь", price: "400 ₽" },
