@@ -133,7 +133,7 @@ const Index = () => {
             <Card className="row-span-3 overflow-hidden">
               <CardContent className="p-0 h-full">
                 <div className="h-full min-h-[280px] bg-muted flex items-center justify-center">
-                  <p className="text-sm font-medium text-muted-foreground text-center px-3">Текст предложения</p>
+                  <p className="text-sm font-medium text-muted-foreground text-center px-3">КОМПЛИМЕНТ от шеф-повара</p>
                 </div>
                 <div className="p-3">
                   <p className="text-sm font-semibold text-card-foreground">
