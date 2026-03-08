@@ -142,7 +142,6 @@ const Index = () => {
             {rightProducts.map(renderProductCard)}
           </div>
         </div>
-        </div>
 
         {/* Personalities */}
         <section className="mb-8">
