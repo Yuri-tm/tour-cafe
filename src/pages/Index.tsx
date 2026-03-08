@@ -43,6 +43,51 @@ const offers = [
 
 
 const Index = () => {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const leftProducts = products.filter((_, i) => i % 2 === 0);
+  const rightProducts = products.filter((_, i) => i % 2 === 1);
+
+  const handleCardClick = (id: number) => {
+    setExpandedId((prev) => (prev === id ? null : id));
+  };
+
+  const renderProductCard = (product: typeof products[0]) => {
+    const isExpanded = expandedId === product.id;
+    return (
+      <Card
+        key={product.id}
+        className="overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-md"
+        onClick={() => handleCardClick(product.id)}
+      >
+        <CardContent className="p-0">
+          <div className="h-28 bg-muted" />
+          <div className="p-3">
+            <p className="text-sm font-medium text-card-foreground">
+              {product.name}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {product.price}
+            </p>
+          </div>
+          <div
+            className="overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out"
+            style={{
+              maxHeight: isExpanded ? "200px" : "0px",
+              opacity: isExpanded ? 1 : 0,
+            }}
+          >
+            <div className="px-3 pb-3">
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {product.description}
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-md px-4 py-6">
