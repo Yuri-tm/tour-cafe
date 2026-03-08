@@ -82,14 +82,14 @@ const Index = () => {
               className="absolute top-2 right-2 flex items-center gap-1.5 z-10 cursor-pointer"
               onClick={(e) => e.stopPropagation()}
             >
+              <span className="text-[10px] font-medium text-foreground bg-background/80 backdrop-blur-sm rounded px-1 py-0.5">
+                Выбрать
+              </span>
               <Checkbox
                 checked={selectedProducts.has(product.id)}
                 onCheckedChange={(checked) => handleCheckboxChange(product.id, !!checked)}
                 className="h-5 w-5 rounded-full border-2 border-primary bg-background/80 backdrop-blur-sm data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
               />
-              <span className="text-[10px] font-medium text-foreground bg-background/80 backdrop-blur-sm rounded px-1 py-0.5">
-                Выбрать
-              </span>
             </label>
           </div>
           <div className="p-3">
