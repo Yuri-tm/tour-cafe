@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import culSharifImg from "@/assets/CulSharif.png";
 import bolgarImg from "@/assets/BolgarWhiteMosque.png";
+import complimentImg from "@/assets/compliment.png";
 
 const categories = [
 { id: 1, name: "КАЗАНЬ", image: culSharifImg },
