@@ -7,21 +7,21 @@ const categories = [
 { id: 2, name: "ТАТАРСТАН" }];
 
 const products = [
-  { id: 1, name: "Сююмбике", price: "100 ₽" },
-  { id: 2, name: "Свияжск", price: "200 ₽" },
-  { id: 3, name: "Ханское золото", price: "300 ₽" },
-  { id: 4, name: "Раифский монастырь", price: "400 ₽" },
-  { id: 5, name: "Продукт 5", price: "500 ₽" },
-  { id: 6, name: "Болгар", price: "600 ₽" },
-  { id: 7, name: "Продукт 7", price: "700 ₽" },
-  { id: 8, name: "Продукт 8", price: "800 ₽" },
-  { id: 9, name: "Продукт 9", price: "900 ₽" },
-  { id: 10, name: "Продукт 10", price: "1000 ₽" },
-  { id: 11, name: "Продукт 11", price: "1100 ₽" },
-  { id: 12, name: "Продукт 12", price: "1200 ₽" },
-  { id: 13, name: "Продукт 13", price: "1300 ₽" },
-  { id: 14, name: "Продукт 14", price: "1400 ₽" },
-];
+{ id: 1, name: "Сююмбике", price: "100 ₽" },
+{ id: 2, name: "Свияжск", price: "200 ₽" },
+{ id: 3, name: "Ханское золото", price: "300 ₽" },
+{ id: 4, name: "Раифский монастырь", price: "400 ₽" },
+{ id: 5, name: "Продукт 5", price: "500 ₽" },
+{ id: 6, name: "Болгар", price: "600 ₽" },
+{ id: 7, name: "Продукт 7", price: "700 ₽" },
+{ id: 8, name: "Продукт 8", price: "800 ₽" },
+{ id: 9, name: "Продукт 9", price: "900 ₽" },
+{ id: 10, name: "Продукт 10", price: "1000 ₽" },
+{ id: 11, name: "Продукт 11", price: "1100 ₽" },
+{ id: 12, name: "Продукт 12", price: "1200 ₽" },
+{ id: 13, name: "Продукт 13", price: "1300 ₽" },
+{ id: 14, name: "Продукт 14", price: "1400 ₽" }];
+
 
 const personalities = [
 { id: 1, name: "Персона 1", details: "Подробности" },
@@ -64,7 +64,7 @@ const Index = () => {
         {/* Action Buttons */}
         <div className="flex gap-3 mb-6">
           <Button asChild className="flex-1 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white">
-            <a href="tel:+7000000000">Позвонить</a>
+            <a href="tel:+7000000000">​ПОЗВОНИТЬ</a>
           </Button>
           <Button variant="secondary" className="flex-1 rounded-xl">
             Button 2
