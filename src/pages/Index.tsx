@@ -36,7 +36,7 @@ const personalities = [
 
 const offers = [
 { id: 1, title: "Алабрыс" },
-{ id: 2, title: "Деталь предложения 2" },
+{ id: 2, title: "Килән" },
 { id: 3, title: "Деталь предложения 3" }];
 
 
