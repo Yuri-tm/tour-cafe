@@ -5,8 +5,8 @@ import culSharifImg from "@/assets/CulSharif.png";
 import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 
 const categories = [
-{ id: 1, name: "КАЗАНЬ" },
-{ id: 2, name: "ТАТАРСТАН" }];
+{ id: 1, name: "КАЗАНЬ", image: culSharifImg },
+{ id: 2, name: "ТАТАРСТАН", image: bolgarImg }];
 
 const products = [
 { id: 1, name: "Сююмбике", price: "100 ₽" },
