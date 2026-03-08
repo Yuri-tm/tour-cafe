@@ -73,7 +73,7 @@ const Index = () => {
           <div
             className="overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out"
             style={{
-              maxHeight: isExpanded ? "200px" : "0px",
+              maxHeight: isExpanded ? "400px" : "0px",
               opacity: isExpanded ? 1 : 0,
             }}
           >
