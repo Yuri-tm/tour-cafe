@@ -50,8 +50,8 @@ const Index = () => {
   const handleCheckboxChange = (productId: number, checked: boolean) => {
     setSelectedProducts((prev) => {
       const next = new Set(prev);
-      if (checked) next.add(productId);
-      else next.delete(productId);
+      if (checked) next.add(productId);else
+      next.delete(productId);
       return next;
     });
   };
@@ -65,7 +65,7 @@ const Index = () => {
   const rightProducts = products.filter((_, i) => i % 2 === 1);
 
   const handleCardClick = (id: number) => {
-    setExpandedId((prev) => (prev === id ? null : id));
+    setExpandedId((prev) => prev === id ? null : id);
   };
 
   const renderProductCard = (product: typeof products[0]) => {
@@ -74,22 +74,22 @@ const Index = () => {
       <Card
         key={product.id}
         className="overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-md"
-        onClick={() => handleCardClick(product.id)}
-      >
+        onClick={() => handleCardClick(product.id)}>
+        
         <CardContent className="p-0">
           <div className="relative h-28 bg-muted">
             <label
               className="absolute top-2 right-2 flex items-center gap-1.5 z-10 cursor-pointer"
-              onClick={(e) => e.stopPropagation()}
-            >
+              onClick={(e) => e.stopPropagation()}>
+              
               <span className="text-[10px] font-medium text-foreground bg-background/80 backdrop-blur-sm rounded px-1 py-0.5">
                 Выбрать
               </span>
               <Checkbox
                 checked={selectedProducts.has(product.id)}
                 onCheckedChange={(checked) => handleCheckboxChange(product.id, !!checked)}
-                className="h-5 w-5 rounded-full border-2 border-primary bg-background/80 backdrop-blur-sm data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-              />
+                className="h-5 w-5 rounded-full border-2 border-primary bg-background/80 backdrop-blur-sm data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground" />
+              
             </label>
           </div>
           <div className="p-3">
@@ -104,26 +104,26 @@ const Index = () => {
             className="overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out"
             style={{
               maxHeight: isExpanded ? "400px" : "0px",
-              opacity: isExpanded ? 1 : 0,
-            }}
-          >
+              opacity: isExpanded ? 1 : 0
+            }}>
+            
             <div className="px-3 pb-3">
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {product.description}
               </p>
-              {"details" in product && product.details && (
-                <>
+              {"details" in product && product.details &&
+              <>
                   <hr className="my-2 border-border" />
                   <p className="text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
                     {product.details}
                   </p>
                 </>
-              )}
+              }
             </div>
           </div>
         </CardContent>
-      </Card>
-    );
+      </Card>);
+
   };
 
   return (
@@ -157,9 +157,9 @@ const Index = () => {
             variant="secondary"
             className="flex-1 rounded-xl text-emerald-600"
             onClick={handleSubmit}
-            disabled={selectedProducts.size === 0}
-          >
-            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            disabled={selectedProducts.size === 0}>
+            
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg>
             ЗАКАЗАТЬ
           </Button>
         </div>
@@ -215,7 +215,7 @@ const Index = () => {
             {/* Main Offer - spans 3 rows */}
             <Card className="row-span-3 overflow-hidden">
               <CardContent className="p-0 h-full">
-                <div className="h-full min-h-[280px] bg-cover bg-center flex items-start justify-center" style={{ backgroundImage: `url(${complimentImg})` }}>
+                <div className="h-full min-h-[280px] bg-cover bg-center flex items-start justify-center" style={{ backgroundImage: "url(\"/lovable-uploads/cf59ad3e-b85e-41ef-aedd-6126644b3c2d.png\")" }}>
                   <h3 className="text-lg font-bold text-white text-center px-3 py-2 bg-black/40 w-full backdrop-blur-sm">КОМПЛИМЕНТ от шеф-повара</h3>
                 </div>
                 <div className="p-3">
