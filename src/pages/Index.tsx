@@ -9,7 +9,7 @@ import complimentImg from "@/assets/compliment.png";
 
 const categories = [
 { id: 1, name: "КАЗАНЬ", image: "/lovable-uploads/38732f60-96e6-4455-bfde-82cbb5339eca.png" },
-{ id: 2, name: "ТАТАРСТАН", image: bolgarImg }];
+{ id: 2, name: "ТАТАРСТАН", image: "/lovable-uploads/a3a17e9a-296f-4ae3-b746-2e81255674fa.png" }];
 
 const products = [
 { id: 1, name: "Белый камень с крестом и полумесяцем", price: "3900 ₽", description: "Экскурсия по Казанскому кремлю с посещением внутри соборной мечети и 500-летнего храма; подаётся под соусом из исторических фактов и древних легенд.", details: "Подача: пешком 2 часа\nВходной билет на объект: 190р/гость\nБлюдо рассчитано на 1-4 гостя\nДобавка: 900₽/гость" },
