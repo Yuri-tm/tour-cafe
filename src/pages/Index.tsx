@@ -8,7 +8,7 @@ import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 import complimentImg from "@/assets/compliment.png";
 
 const categories = [
-{ id: 1, name: "КАЗАНЬ", image: culSharifImg },
+{ id: 1, name: "КАЗАНЬ", image: "/lovable-uploads/38732f60-96e6-4455-bfde-82cbb5339eca.png" },
 { id: 2, name: "ТАТАРСТАН", image: bolgarImg }];
 
 const products = [
