@@ -58,9 +58,28 @@ const Index = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const [isSending, setIsSending] = useState(false);
+
+  const handleSubmit = async () => {
     const selected = products.filter((p) => selectedProducts.has(p.id));
-    console.log("Выбранные продукты:", selected);
+    if (selected.length === 0) return;
+
+    setIsSending(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-telegram', {
+        body: { products: selected.map(p => ({ name: p.name, price: p.price })) },
+      });
+
+      if (error) throw error;
+
+      toast.success('Заказ отправлен!');
+      setSelectedProducts(new Set());
+    } catch (err) {
+      console.error('Send error:', err);
+      toast.error('Ошибка отправки заказа');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const leftProducts = products.filter((_, i) => i % 2 === 0);
