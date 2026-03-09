@@ -108,7 +108,7 @@ const Index = () => {
             }}>
             
             <div className="px-3 pb-3">
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-xs leading-relaxed text-secondary-foreground">
                 {product.description}
               </p>
               {"details" in product && product.details &&
