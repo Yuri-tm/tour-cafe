@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import culSharifImg from "@/assets/CulSharif.png";
 import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 import complimentImg from "@/assets/compliment.png";
