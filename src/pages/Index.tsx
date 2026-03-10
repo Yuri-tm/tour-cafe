@@ -193,7 +193,7 @@ const Index = () => {
           </Button>
           <Button
             variant="secondary"
-            className="flex-1 rounded-xl text-emerald-600"
+            className="flex-1 rounded-xl text-primary"
             onClick={handleOrderClick}
             disabled={selectedProducts.size === 0 || isSending}>
             
