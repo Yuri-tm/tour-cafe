@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import culSharifImg from "@/assets/CulSharif.png";
 import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 import complimentImg from "@/assets/compliment.png";
@@ -59,21 +61,36 @@ const Index = () => {
   };
 
   const [isSending, setIsSending] = useState(false);
+  const [showPhoneDialog, setShowPhoneDialog] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const handleOrderClick = () => {
+    if (selectedProducts.size === 0) return;
+    setShowPhoneDialog(true);
+  };
 
   const handleSubmit = async () => {
-    const selected = products.filter((p) => selectedProducts.has(p.id));
-    if (selected.length === 0) return;
+    if (!phoneNumber.trim()) {
+      toast.error('Введите номер телефона');
+      return;
+    }
 
+    const selected = products.filter((p) => selectedProducts.has(p.id));
     setIsSending(true);
+    setShowPhoneDialog(false);
     try {
       const { data, error } = await supabase.functions.invoke('send-telegram', {
-        body: { products: selected.map(p => ({ name: p.name, price: p.price })) },
+        body: {
+          products: selected.map(p => ({ name: p.name, price: p.price })),
+          phone: phoneNumber.trim(),
+        },
       });
 
       if (error) throw error;
 
       toast.success('Заказ отправлен!');
       setSelectedProducts(new Set());
+      setPhoneNumber("");
     } catch (err) {
       console.error('Send error:', err);
       toast.error('Ошибка отправки заказа');
@@ -177,7 +194,7 @@ const Index = () => {
           <Button
             variant="secondary"
             className="flex-1 rounded-xl text-emerald-600"
-            onClick={handleSubmit}
+            onClick={handleOrderClick}
             disabled={selectedProducts.size === 0 || isSending}>
             
             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" /></svg>
@@ -259,6 +276,31 @@ const Index = () => {
             )}
           </div>
         </section>
+        {/* Phone Number Dialog */}
+        <Dialog open={showPhoneDialog} onOpenChange={setShowPhoneDialog}>
+          <DialogContent className="max-w-sm">
+            <DialogHeader>
+              <DialogTitle>Введите номер телефона</DialogTitle>
+              <DialogDescription>
+                Укажите ваш номер телефона для связи по заказу
+              </DialogDescription>
+            </DialogHeader>
+            <Input
+              type="tel"
+              placeholder="+7 (900) 000-00-00"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className="text-lg"
+            />
+            <Button
+              onClick={handleSubmit}
+              disabled={!phoneNumber.trim() || isSending}
+              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white"
+            >
+              {isSending ? 'Отправка...' : 'Отправить заказ'}
+            </Button>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>);
 
