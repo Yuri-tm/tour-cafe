@@ -184,7 +184,7 @@ const Index = () => {
         </header>
 
         {/* Subtitle */}
-        <p className="text-center text-muted-foreground mb-4 font-semibold">Меню нашего туристического кафе.</p>
+        <p className="text-center text-muted-foreground mb-4 font-semibold">Меню нашего туристического кафе.<br />Выбирайте по вкусу!</p>
 
         {/* Action Buttons */}
         <div className="flex gap-3 mb-6">
