@@ -17,7 +17,7 @@ serve(async (req) => {
     const TELEGRAM_CHAT_ID = Deno.env.get('TELEGRAM_CHAT_ID');
     if (!TELEGRAM_CHAT_ID) throw new Error('TELEGRAM_CHAT_ID is not configured');
 
-    const { products } = await req.json();
+    const { products, phone } = await req.json();
 
     if (!products || !Array.isArray(products) || products.length === 0) {
       return new Response(JSON.stringify({ error: 'No products selected' }), {
@@ -30,7 +30,8 @@ serve(async (req) => {
       `${i + 1}. ${p.name} — ${p.price}`
     );
 
-    const message = `🍽 *Новый заказ из Тур-кафе СӘЯХӘТ*\n\n${lines.join('\n')}\n\n📦 Всего позиций: ${products.length}`;
+    const phoneLine = phone ? `\n📞 Телефон: ${phone}` : '';
+    const message = `🍽 *Новый заказ из Тур-кафе СӘЯХӘТ*\n\n${lines.join('\n')}\n\n📦 Всего позиций: ${products.length}${phoneLine}`;
 
     const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
     const res = await fetch(telegramUrl, {

@@ -276,6 +276,31 @@ const Index = () => {
             )}
           </div>
         </section>
+        {/* Phone Number Dialog */}
+        <Dialog open={showPhoneDialog} onOpenChange={setShowPhoneDialog}>
+          <DialogContent className="max-w-sm">
+            <DialogHeader>
+              <DialogTitle>Введите номер телефона</DialogTitle>
+              <DialogDescription>
+                Укажите ваш номер телефона для связи по заказу
+              </DialogDescription>
+            </DialogHeader>
+            <Input
+              type="tel"
+              placeholder="+7 (900) 000-00-00"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className="text-lg"
+            />
+            <Button
+              onClick={handleSubmit}
+              disabled={!phoneNumber.trim() || isSending}
+              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white"
+            >
+              {isSending ? 'Отправка...' : 'Отправить заказ'}
+            </Button>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>);
 
