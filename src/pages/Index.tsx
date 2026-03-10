@@ -295,7 +295,7 @@ const Index = () => {
             <Button
               onClick={handleSubmit}
               disabled={!phoneNumber.trim() || isSending}
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               {isSending ? 'Отправка...' : 'Отправить заказ'}
             </Button>
