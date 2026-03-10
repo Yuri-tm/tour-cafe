@@ -61,21 +61,36 @@ const Index = () => {
   };
 
   const [isSending, setIsSending] = useState(false);
+  const [showPhoneDialog, setShowPhoneDialog] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const handleOrderClick = () => {
+    if (selectedProducts.size === 0) return;
+    setShowPhoneDialog(true);
+  };
 
   const handleSubmit = async () => {
-    const selected = products.filter((p) => selectedProducts.has(p.id));
-    if (selected.length === 0) return;
+    if (!phoneNumber.trim()) {
+      toast.error('Введите номер телефона');
+      return;
+    }
 
+    const selected = products.filter((p) => selectedProducts.has(p.id));
     setIsSending(true);
+    setShowPhoneDialog(false);
     try {
       const { data, error } = await supabase.functions.invoke('send-telegram', {
-        body: { products: selected.map(p => ({ name: p.name, price: p.price })) },
+        body: {
+          products: selected.map(p => ({ name: p.name, price: p.price })),
+          phone: phoneNumber.trim(),
+        },
       });
 
       if (error) throw error;
 
       toast.success('Заказ отправлен!');
       setSelectedProducts(new Set());
+      setPhoneNumber("");
     } catch (err) {
       console.error('Send error:', err);
       toast.error('Ошибка отправки заказа');
