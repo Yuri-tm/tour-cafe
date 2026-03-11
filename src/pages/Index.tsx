@@ -217,6 +217,8 @@ const Index = () => {
             </Card>)}
         </div>
 
+        <TatarDivider />
+
         {/* Products */}
         <div className="flex gap-3 mb-8">
           <div className="flex-1 flex flex-col gap-3">
