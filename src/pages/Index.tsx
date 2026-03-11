@@ -168,14 +168,19 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-md px-[12px] py-[24px]">
         {/* Ornamental Header */}
-        <header className="mb-6 text-center">
+        <header className="mb-6 text-center relative">
+          {/* Logo & Phone row */}
+          <div className="flex items-center justify-between mb-3">
+            <div className="h-14 w-14 rounded-full bg-primary flex items-center justify-center shadow-lg ring-2 ring-accent/30">
+              <span className="text-primary-foreground font-display text-xl font-bold">С</span>
+            </div>
+            <a href="tel:+70000000000" className="text-muted-foreground hover:text-accent transition-colors">
+              <Phone className="h-5 w-5" />
+            </a>
+          </div>
+
           {/* Top ornament line */}
           <div className="tatar-ornament-line mb-4" />
-
-          {/* Logo circle */}
-          <div className="mx-auto mb-3 h-14 w-14 rounded-full bg-primary flex items-center justify-center shadow-lg ring-2 ring-accent/30">
-            <span className="text-primary-foreground font-display text-xl font-bold">С</span>
-          </div>
 
           {/* Title */}
           <h1 className="font-display font-black text-foreground text-3xl leading-tight tracking-wide">
@@ -190,13 +195,6 @@ const Index = () => {
 
           {/* Bottom ornament line */}
           <div className="tatar-ornament-line mt-4" />
-
-          {/* Phone link */}
-          <div className="flex justify-end -mt-3 mr-1">
-            <a href="tel:+70000000000" className="text-muted-foreground hover:text-accent transition-colors">
-              <Phone className="h-5 w-5" />
-            </a>
-          </div>
         </header>
 
         {/* Subtitle */}
