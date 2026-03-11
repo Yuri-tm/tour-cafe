@@ -251,6 +251,8 @@ const Index = () => {
           </div>
         </section>
 
+        <TatarDivider />
+
         {/* Special Offer */}
         <section className="mb-8">
           <h2 className="text-lg font-bold text-foreground mb-4">
