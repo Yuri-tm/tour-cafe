@@ -203,6 +203,8 @@ const Index = () => {
           </Button>
         </div>
 
+        <TatarDivider />
+
         {/* Categories */}
         <div className="grid grid-cols-2 gap-3 mb-6">
           {categories.map((cat) => <Card key={cat.id} className="overflow-hidden">
