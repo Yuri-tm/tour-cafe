@@ -167,24 +167,42 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-md px-[12px] py-[24px]">
-        {/* Header */}
-        <header className="flex items-center justify-between mb-4">
-          <div className="h-10 w-10 rounded-full bg-primary" />
-          <h1 className="font-bold text-foreground text-center py-[10px] px-[10px] text-2xl">Тур-кафе
+        {/* Ornamental Header */}
+        <header className="mb-6 text-center">
+          {/* Top ornament line */}
+          <div className="tatar-ornament-line mb-4" />
 
+          {/* Logo circle */}
+          <div className="mx-auto mb-3 h-14 w-14 rounded-full bg-primary flex items-center justify-center shadow-lg ring-2 ring-accent/30">
+            <span className="text-primary-foreground font-display text-xl font-bold">С</span>
+          </div>
 
-СӘЯХӘТ
-
-(путешествие)
-
+          {/* Title */}
+          <h1 className="font-display font-black text-foreground text-3xl leading-tight tracking-wide">
+            Тур-кафе
           </h1>
-          <a href="tel:+70000000000" className="text-muted-foreground">
-            <Phone className="h-5 w-5" />
-          </a>
+          <p className="font-display text-accent text-2xl font-bold italic mt-1 tracking-widest">
+            СӘЯХӘТ
+          </p>
+          <p className="text-muted-foreground text-sm tracking-[0.25em] uppercase mt-1 font-body">
+            путешествие
+          </p>
+
+          {/* Bottom ornament line */}
+          <div className="tatar-ornament-line mt-4" />
+
+          {/* Phone link */}
+          <div className="flex justify-end -mt-3 mr-1">
+            <a href="tel:+70000000000" className="text-muted-foreground hover:text-accent transition-colors">
+              <Phone className="h-5 w-5" />
+            </a>
+          </div>
         </header>
 
         {/* Subtitle */}
-        <p className="text-center text-muted-foreground mb-4 font-semibold">Меню нашего туристического кафе.<br />Выбирайте по вкусу!</p>
+        <p className="text-center text-muted-foreground mb-4 font-body font-semibold text-lg tatar-corner py-2">
+          Меню нашего туристического кафе.<br />Выбирайте по вкусу!
+        </p>
 
         {/* Action Buttons */}
         <div className="flex gap-3 mb-6">
