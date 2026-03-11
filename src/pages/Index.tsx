@@ -229,6 +229,8 @@ const Index = () => {
           </div>
         </div>
 
+        <TatarDivider />
+
         {/* Personalities */}
         <section className="mb-8">
           <h2 className="text-lg font-bold text-foreground mb-4">Наш повар и его комманда</h2>
