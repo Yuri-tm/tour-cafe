@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import culSharifImg from "@/assets/CulSharif.png";
 import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 import complimentImg from "@/assets/compliment.png";
+import TatarDivider from "@/components/TatarDivider";
 
 const categories = [
 { id: 1, name: "КАЗАНЬ", image: "/lovable-uploads/38732f60-96e6-4455-bfde-82cbb5339eca.png" },
@@ -202,6 +203,8 @@ const Index = () => {
           </Button>
         </div>
 
+        <TatarDivider />
+
         {/* Categories */}
         <div className="grid grid-cols-2 gap-3 mb-6">
           {categories.map((cat) => <Card key={cat.id} className="overflow-hidden">
@@ -214,6 +217,8 @@ const Index = () => {
             </Card>)}
         </div>
 
+        <TatarDivider />
+
         {/* Products */}
         <div className="flex gap-3 mb-8">
           <div className="flex-1 flex flex-col gap-3">
@@ -223,6 +228,8 @@ const Index = () => {
             {rightProducts.map(renderProductCard)}
           </div>
         </div>
+
+        <TatarDivider />
 
         {/* Personalities */}
         <section className="mb-8">
@@ -243,6 +250,8 @@ const Index = () => {
               </Card>)}
           </div>
         </section>
+
+        <TatarDivider />
 
         {/* Special Offer */}
         <section className="mb-8">
