@@ -115,7 +115,8 @@ const Index = () => {
         onClick={() => handleCardClick(product.id)}>
         
         <CardContent className="p-0">
-          <div className="relative h-28 bg-muted">
+          <div className="relative h-28 bg-transparent">
+            <img src={kulSharifImg} alt="Кул-Шариф" className="w-full h-full object-cover" />
             <label
               className="absolute top-2 right-2 flex items-center gap-1.5 z-10 cursor-pointer"
               onClick={(e) => e.stopPropagation()}>
