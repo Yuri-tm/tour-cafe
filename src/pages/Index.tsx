@@ -81,9 +81,9 @@ const Index = () => {
     try {
       const { data, error } = await supabase.functions.invoke('send-telegram', {
         body: {
-          products: selected.map((p) => ({ name: p.name, price: p.price })),
-          phone: phoneNumber.trim()
-        }
+          products: selected.map(p => ({ name: p.name, price: p.price })),
+          phone: phoneNumber.trim(),
+        },
       });
 
       if (error) throw error;
@@ -115,7 +115,7 @@ const Index = () => {
         onClick={() => handleCardClick(product.id)}>
         
         <CardContent className="p-0">
-          <div className="relative h-28 bg-transparent">
+          <div className="relative h-28 bg-muted">
             <label
               className="absolute top-2 right-2 flex items-center gap-1.5 z-10 cursor-pointer"
               onClick={(e) => e.stopPropagation()}>
@@ -202,18 +202,6 @@ const Index = () => {
           </Button>
         </div>
 
-        {/* Categories */}
-        <div className="grid grid-cols-2 gap-3 mb-6">
-          {categories.map((cat) => <Card key={cat.id} className="overflow-hidden">
-              <CardContent className="p-0">
-                <div className="h-24 bg-cover bg-center" style={{ backgroundImage: `url(${cat.image})` }} />
-                <p className="p-3 text-sm font-medium text-card-foreground">
-                  {cat.name}
-                </p>
-              </CardContent>
-            </Card>)}
-        </div>
-
         {/* Products */}
         <div className="flex gap-3 mb-8">
           <div className="flex-1 flex flex-col gap-3">
@@ -290,13 +278,13 @@ const Index = () => {
               placeholder="+7 (900) 000-00-00"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className="text-lg" />
-            
+              className="text-lg"
+            />
             <Button
               onClick={handleSubmit}
               disabled={!phoneNumber.trim() || isSending}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-              
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+            >
               {isSending ? 'Отправка...' : 'Отправить заказ'}
             </Button>
           </DialogContent>
