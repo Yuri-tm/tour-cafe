@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import culSharifImg from "@/assets/CulSharif.png";
 import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 import complimentImg from "@/assets/compliment.png";
+import kulSharifNoBgImg from "@/assets/kulSharif_noBG.png";
 
 const categories = [
 { id: 1, name: "КАЗАНЬ", image: "/lovable-uploads/38732f60-96e6-4455-bfde-82cbb5339eca.png" },
@@ -115,7 +116,8 @@ const Index = () => {
         onClick={() => handleCardClick(product.id)}>
         
         <CardContent className="p-0">
-          <div className="relative h-28 bg-muted">
+          <div className="relative h-28 bg-transparent">
+            <img src={kulSharifNoBgImg} alt="Кул-Шариф" className="w-full h-full object-cover" />
             <label
               className="absolute top-2 right-2 flex items-center gap-1.5 z-10 cursor-pointer"
               onClick={(e) => e.stopPropagation()}>
