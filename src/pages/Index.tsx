@@ -202,18 +202,6 @@ const Index = () => {
           </Button>
         </div>
 
-        {/* Categories */}
-        <div className="grid grid-cols-2 gap-3 mb-6">
-          {categories.map((cat) => <Card key={cat.id} className="overflow-hidden">
-              <CardContent className="p-0">
-                <div className="h-24 bg-cover bg-center" style={{ backgroundImage: `url(${cat.image})` }} />
-                <p className="p-3 text-sm font-medium text-card-foreground">
-                  {cat.name}
-                </p>
-              </CardContent>
-            </Card>)}
-        </div>
-
         {/* Products */}
         <div className="flex gap-3 mb-8">
           <div className="flex-1 flex flex-col gap-3">
