@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import culSharifImg from "@/assets/CulSharif.png";
 import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 import complimentImg from "@/assets/compliment.png";
+import kulSharifNoBgImg from "@/assets/kulSharif_noBG.png";
 
 const categories = [
 { id: 1, name: "КАЗАНЬ", image: "/lovable-uploads/38732f60-96e6-4455-bfde-82cbb5339eca.png" },
