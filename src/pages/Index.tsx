@@ -12,6 +12,7 @@ import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 import complimentImg from "@/assets/compliment.png";
 import kulSharifImg from "@/assets/KulSharif_noBG.png";
 import bolgarNoBgImg from "@/assets/Bolgar_noBG.png";
+import sviyazhskImg from "@/assets/Sviyazhsk_noBG.png";
 
 const categories = [
 { id: 1, name: "КАЗАНЬ", image: "/lovable-uploads/38732f60-96e6-4455-bfde-82cbb5339eca.png" },
