@@ -117,6 +117,9 @@ const Index = () => {
         
         <CardContent className="p-0">
           <div className="relative aspect-square bg-muted">
+            {"image" in product && product.image && (
+              <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
+            )}
             <label
               className="absolute top-2 right-2 flex items-center gap-1.5 z-10 cursor-pointer"
               onClick={(e) => e.stopPropagation()}>
