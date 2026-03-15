@@ -10,13 +10,14 @@ import { Input } from "@/components/ui/input";
 import culSharifImg from "@/assets/CulSharif.png";
 import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 import complimentImg from "@/assets/compliment.png";
+import kulSharifImg from "@/assets/KulSharif.jpeg";
 
 const categories = [
 { id: 1, name: "КАЗАНЬ", image: "/lovable-uploads/38732f60-96e6-4455-bfde-82cbb5339eca.png" },
 { id: 2, name: "ТАТАРСТАН", image: "/lovable-uploads/a3a17e9a-296f-4ae3-b746-2e81255674fa.png" }];
 
 const products = [
-{ id: 1, name: "Белый камень с крестом и полумесяцем", price: "3900 ₽", description: "Экскурсия по Казанскому кремлю с посещением внутри соборной мечети и 500-летнего храма; подаётся под соусом из исторических фактов и древних легенд.", details: "Подача: пешком 2 часа\nВходной билет на объект: 190р/гость\nБлюдо рассчитано на 1-4 гостя\nДобавка: 900₽/гость" },
+{ id: 1, name: "Белый камень с крестом и полумесяцем", price: "3900 ₽", image: kulSharifImg, description: "Экскурсия по Казанскому кремлю с посещением внутри соборной мечети и 500-летнего храма; подаётся под соусом из исторических фактов и древних легенд.", details: "Подача: пешком 2 часа\nВходной билет на объект: 190р/гость\nБлюдо рассчитано на 1-4 гостя\nДобавка: 900₽/гость" },
 { id: 2, name: "Свияжск", price: "200 ₽", description: "Остров-град Свияжск — жемчужина Татарстана, основанная Иваном Грозным в 1551 году. Уникальный историко-архитектурный комплекс, включённый в список Всемирного наследия ЮНЕСКО, с древними монастырями и храмами на живописном острове.", details: "" },
 { id: 3, name: "Татарская слобода", price: "3900 ₽", description: "Променадная прогулка по древним татарским улочкам между ажурных цветных домиков; подаётся под культурно-традиционным соусом с привкусом гастрономических татарских изысков.", details: "Подача: пешком 2 часа\nВходные билеты не требуются\nБлюдо рассчитано на 1-4 гостя\nДобавка: 900₽/гость" },
 { id: 4, name: "Раифский монастырь", price: "400 ₽", description: "Раифский Богородицкий монастырь — одна из самых почитаемых обителей Татарстана, основанная в XVII веке на берегу живописного озера. Блюдо передаёт атмосферу умиротворения и духовной чистоты этого святого места.", details: "" },
@@ -116,6 +117,9 @@ const Index = () => {
         
         <CardContent className="p-0">
           <div className="relative aspect-square bg-muted">
+            {"image" in product && product.image && (
+              <img src={product.image} alt={product.name} className="w-full h-full object-contain" />
+            )}
             <label
               className="absolute top-2 right-2 flex items-center gap-1.5 z-10 cursor-pointer"
               onClick={(e) => e.stopPropagation()}>
