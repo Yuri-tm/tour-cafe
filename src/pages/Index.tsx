@@ -222,7 +222,7 @@ const Index = () => {
         <section className="mb-8">
           <h2 className="text-lg font-bold text-foreground mb-4">Наш повар и его комманда</h2>
           <div className="grid grid-cols-2 gap-3">
-            {personalities.map((person) => <Card key={person.id} className="overflow-hidden">
+            {personalities.map((person, index) => <Card key={person.id} className={`overflow-hidden ${index === 0 ? "row-span-3" : ""}`}>
                 <CardContent className="p-0">
                   <div className="h-28 bg-muted rounded-t-lg" />
                   <div className="p-3">
