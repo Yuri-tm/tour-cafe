@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import culSharifImg from "@/assets/CulSharif.png";
 import bolgarImg from "@/assets/BolgarWhiteMosque.png";
 import complimentImg from "@/assets/compliment.png";
-import kulSharifImg from "@/assets/KulSharif_noBG_small.png";
+import kulSharifImg from "@/assets/Kremlin_noBG_small.png";
 import bolgarNoBgImg from "@/assets/Bolgar_noBG_small.png";
 import sviyazhskImg from "@/assets/Sviyazhsk_noBG.png";
 
