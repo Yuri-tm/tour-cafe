@@ -21,6 +21,7 @@ import soyombikehImg from "@/assets/Soyembikeh_small.png";
 import pyramidImg from "@/assets/Pyramid_noBG_small.png";
 import gastroTourImg from "@/assets/GastroTour_noBG_small.png";
 import R1Img from "@/assets/R1.jpg";
+import R2Img from "@/assets/R2.jpg"
 
 
 
@@ -30,7 +31,7 @@ const categories = [
 
 const products = [
   { id: 1, name: "Белый камень с крестом и полумесяцем", price: "3900 ₽", image: kulSharifImg, description: "Экскурсия по Казанскому кремлю с посещением внутри соборной мечети и 500-летнего храма; подаётся под соусом из исторических фактов и древних легенд.", details: "Подача: пешком 2 часа\nВходной билет на объект: 190р/гость\nБлюдо рассчитано на 1-4 гостя\nДобавка: 900₽/гость" },
-  { id: 2, name: "Свияжск", price: "5000 ₽", image: sviyazhskImg, description: "Остров-град Свияжск — жемчужина Татарстана, основанная Иваном Грозным в 1551 году. Уникальный историко-архитектурный комплекс, включённый в список Всемирного наследия ЮНЕСКО, с древними монастырями и храмами на живописном острове.", details: "" },
+  { id: 2, name: "Остров-град Свияжск", price: "5000 ₽", image: sviyazhskImg, description: "Остров-град Свияжск — жемчужина Татарстана, основанная Иваном Грозным в 1551 году. Уникальный историко-архитектурный комплекс, включённый в список Всемирного наследия ЮНЕСКО, с древними монастырями и храмами на живописном острове.", details: "" },
   { id: 3, name: "Татарская слобода", price: "3900 ₽", image: slobodaNoBGImg, description: "Променадная прогулка по древним татарским улочкам между ажурных цветных домиков; подаётся под культурно-традиционным соусом с привкусом гастрономических татарских изысков.", details: "Подача: пешком 2 часа\nВходные билеты не требуются\nБлюдо рассчитано на 1-4 гостя\nДобавка: 900₽/гость" },
   { id: 4, name: "Раифский монастырь", price: "5000 ₽", image: raifaImg, description: "Раифский Богородицкий монастырь — одна из самых почитаемых обителей Татарстана, основанная в XVII веке на берегу живописного озера. Блюдо передаёт атмосферу умиротворения и духовной чистоты этого святого места.", details: "" },
   { id: 5, name: "Туфелька Сююмбике", price: "3900 ₽", image: soyombikehImg, description: "Блюдо про любовь, мудрость и жертвенность татарской царицы; прогулка по её жизненному пути подаётся с перчинкой интимных подробностей и окутывается вуалью неразгаданных тайн.", details: "Подача: пешком 2 часа\nВходной билет на объект: 300р/гость\nБлюдо рассчитано на 1-4 гостя\nДобавка: 900р/гость" },
@@ -225,7 +226,7 @@ const Index = () => {
         <section className="mb-8">
           <h2 className="text-lg font-bold text-foreground mb-4">Наш повар и его команда</h2>
           <div className="grid grid-cols-2 gap-3">
-            <div className="aspect-[1/2] bg-muted rounded-lg" style={{ backgroundImage: `url(${R1Img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <div className="aspect-[1/2] bg-muted rounded-lg" style={{ backgroundImage: `url(${R2Img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
             <Card className="aspect-[1/2] overflow-hidden">
               <CardContent className="p-0 h-full">
                 <div className="p-3 flex flex-col justify-center">
