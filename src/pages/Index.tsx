@@ -226,8 +226,8 @@ const Index = () => {
         <section className="mb-8">
           <h2 className="text-lg font-bold text-foreground mb-4">Наш повар и его команда</h2>
           <div className="grid grid-cols-2 gap-3">
-            <div className="aspect-[1/2] bg-muted rounded-lg" style={{ backgroundImage: `url(${R2Img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-            <Card className="aspect-[1/2] overflow-hidden">
+            <div className="bg-muted rounded-lg" style={{ backgroundImage: `url(${R2Img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+            <Card className="overflow-hidden">
               <CardContent className="p-0 h-full">
                 <div className="p-3 flex flex-col justify-center">
                   <p className="text-sm font-semibold text-card-foreground mb-2">
