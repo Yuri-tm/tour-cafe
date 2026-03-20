@@ -4,8 +4,12 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
+const defaultPagesBase = repositoryName ? `/${repositoryName}/` : "/tour-cafe/";
+const base = process.env.VITE_BASE_PATH ?? defaultPagesBase;
+
 export default defineConfig(({ mode }) => ({
-  base: "/tour-cafe/",
+  base,
   server: {
     host: "::",
     port: 8080,
