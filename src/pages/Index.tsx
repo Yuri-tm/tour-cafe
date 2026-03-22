@@ -23,6 +23,7 @@ import gastroTourImg from "@/assets/GastroTour_noBG_small.png";
 import R2Img from "@/assets/R2.jpg"
 import chuckChuckImg from "@/assets/ChuckChuck_small.png";
 import templeOfAllReligionsImg from "@/assets/TAR_noBG_small.png";
+import logoImg from "@/assets/Logo_noBG.svg";
 
 
 
@@ -242,7 +243,7 @@ const Index = () => {
         {/* Header */}
         <header className="flex items-center justify-between mb-4">
           <div className="w-1/4 flex items-center justify-center">
-            <img src={logo2} alt="logo" className="w-full h-full object-contain" />
+            <img src={logoImg} alt="logo" className="w-full h-full object-contain" />
           </div>
           <h1 className="font-bold text-foreground text-center py-[10px] px-[10px] text-2xl">Тур-кафе
 
