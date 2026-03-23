@@ -23,7 +23,7 @@ import R2Img from "@/assets/R2.jpg"
 import R22Img from "@/assets/R22.jpg"
 import chuckChuckImg from "@/assets/ChuckChuck_small.png";
 import templeOfAllReligionsImg from "@/assets/TAR_noBG_small.png";
-import logoImg from "@/assets/Logo_noBG.svg";
+import logoImg from "@/assets/Logo.svg";
 import zilantImg from "@/assets/Zilant_noBG_small.png";
 import robotImg from "@/assets/robot_noBG.png";
 
